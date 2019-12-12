@@ -13,6 +13,7 @@ namespace CurrencyExchange.Models
         {
             XmlDocument xDoc = new XmlDocument();
 
+            //xDoc.Load("http://www.cbr.ru/scripts/XML_daily.asp");
             xDoc.Load("C:\\Temp\\XML_daily.asp.odm");
 
             return xDoc;
