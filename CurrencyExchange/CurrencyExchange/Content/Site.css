@@ -11,57 +11,49 @@ footer{
     clear:both;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 40px;
 }
 
-
-/*.dl-horizontal dt {
-    white-space: normal;
-}*/
-
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100px;
 }
 
 .header {
     font-weight: bold;
     padding: 20px;
 }
-td{
+td.border-bottom{
     /*height: 35px;*/
     text-align: center;
     vertical-align: bottom;
     border-bottom: 1px solid #ddd;
     /*padding-top: 6px;*/
 }
-section {
-    float: left;
-    margin: 0 1.5%;
-    width: 80%;
-    /*font-size: 90px;*/
+
+tr:hover {
+    background-color: #f5f5f5;
+
 }
-aside{
-    float: right;
-    margin: 0 1.5%;
-    width: 50px;
+.hovertable tr:hover td {
+    background-color: #f5f5f5;
 }
-tr:hover {background-color: #f5f5f5;}
-table{
+/*table{
     width: 130px;
-}
-.lite_exch.about-index{
+}*/
+.lite_exch.about-index {
     padding-bottom: 0;
+    text-align: center;
+    margin-top: 100px;
 }
 .container{
     margin-right: auto;
     margin-left: auto;
-    
+    text-align: center;
 }
 h2.valuta-header {
     text-transform: uppercase;
@@ -84,4 +76,125 @@ ul.list-disk li {
     list-style: disc;
     margin-left: 20px;
     padding-left: 15px;
+}
+.valuta-header {
+    color: #002863;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 880px;
+    margin: 10px auto;
+}
+ul.list-group{
+    text-align: left;
+}
+/*table.tb_cursCB{
+    width:130px;
+}*/
+.tb_cursCB {
+    /*width: 20px;*/
+    /*font-size: 15px;*/
+}
+.curs_CB{
+    width: 200px;
+}
+table.center{
+    margin-left: auto;
+    margin-right:auto;
+}
+.color-headers {
+    color: #002863;
+}
+.main_block{
+    width: 90%;
+    float: left;
+}
+.aside_block{
+    width: 10%;
+    float: right;
+}
+.container:after, .row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.steps-info {
+    margin: 0 0 100px 0;
+}
+td.desc_steps {
+    text-align: left;
+    font-size: 13px;
+    /*width: 50px;*/
+    height: 50px;
+    vertical-align: top;
+    /*padding: 10px;*/
+}
+.desc_steps {
+    width:950px;
+    /*border-spacing: 200px;*/
+}
+table{
+    
+}
+.valuta-col-450, .valuta-col-280 {
+    float: left;
+    margin-right: 50px;
+    /*text-align: center;*/
+}
+.valuta-course__title {
+    color: #002863;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.valuta-course__text {
+    color: #002863;
+    font-size: 42px;
+    font-weight: 100;
+    white-space: nowrap;    
+}
+.valuta-input__left, .valuta-input__right {
+    float: left;
+}
+.valuta-input__label {
+    color: #393939;
+    font-size: 12px;
+    text-align: left;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.valuta-course-wrapper {
+    margin-right: 50px;
+    margin-left: 80px;
+}
+.valuta-col-280 {
+    width: 240px;
+}
+.valuta-input__right {
+    width: 50%;
+}
+.order-params__left {
+    display: table-cell;
+    vertical-align: middle;
+    /*padding: 6px 0;*/
+    padding-right: 5px;
+    border-bottom: 1px solid #cbcdcd;
+    text-align: left;
+}
+.order-params__right {
+    text-align: right;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 6px 0;
+    padding-left: 5px;
+    border-bottom: 1px solid #cbcdcd;
+    white-space: nowrap;
+}
+.order-params__item {
+    display: table;
+    width: 100%;
 }

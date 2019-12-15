@@ -5,10 +5,220 @@
 
 <html>
 <body>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="main_block">
+                    <div class="screen-init">
+                        <h1 class="valuta-header">Обмен валюты онлайн</h1>
+                        
+                            <div class="steps-info">
+                                <table class="center desc_steps">
+                                    <tr>
+                                        <td class="desc_steps">Выберите валюту и сумму для <br />обмена</td>
+                                        <td class="desc_steps">Выберите способ заключения 
+                                        <br />договора: прийти в отделение 
+                                        <br />Банка или вызвать курьера</td>
+                                        <td class="desc_steps">Ознакомьтесь с условиями <br />публичной оферты</td>
+                                        <td class="desc_steps">Введите Ваши платёжные данные</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        
+                    </div>
+                    <div class="row center">
+                        <div class="valuta-col-450">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="valuta-course-wrapper">
+                                        <div class="valuta-course">
+                                            <p class="valuta-course__title">Я продаю</p>
+                                            <div class="radio">
+                                                <label class="valuta-course_label">
+                                                    <input type="radio"
+                                                           name="course"
+                                                           data-currency="usd"
+                                                           data-operation="buy">
+                                                    <span class="valuta-course__text">
+                                                        <span>
+                                                            62,27
+                                                        </span>
+                                                        <sup>$</sup>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label class="valuta-course_label">
+                                                    <input type="radio"
+                                                           name="course"
+                                                           data-currency="eur"
+                                                           data-operation="buy">
+                                                    <span class="valuta-course__text">
+                                                        <span>
+                                                            62,27
+                                                        </span>
+                                                        <sup>€</sup>
 
-    <section>
-        <div class="lite_exch about-index">
+                                                    </span>
+
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="valuta-course-wrapper">
+                                        <div class="valuta-course">
+                                            <p class="valuta-course__title">Я&nbsp;покупаю</p>
+
+                                            <div class="radio">
+                                                <label class="valuta-course_label">
+                                                    <input type="radio"
+                                                           name="course"
+                                                           data-currency="usd"
+                                                           data-operation="sell">
+                                                    <span class="valuta-course__text">
+                                                        <span>
+                                                            62,27
+                                                        </span>
+                                                        <sup>$</sup>
+
+                                                    </span>
+
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label class="valuta-course_label">
+                                                    <input type="radio"
+                                                           name="course"
+                                                           data-currency="eur"
+                                                           data-operation="sell">
+                                                    <span class="valuta-course__text">
+                                                        <span>
+                                                            62,27
+                                                        </span>
+                                                        <sup>€</sup>
+
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="valuta-col-280">
+                            <div class="valuta-input">
+                                <div class="valuta-input__left">
+                                    <label class="valuta-input__label">
+                                        Введите сумму<br>для обмена:
+                                    </label>
+                                </div>
+                                <div class="valuta-input__right">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="order-params">
+                                <div class="order-params__item">
+                                    <div class="order-params__left">
+                                        <div class="order-params__normal-text">Я
+                                            <span>(продаю)</span>
+                                            <span>$</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-params__right">
+                                        <div class="order-params__big-text">
+                                            4000
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+
+
+
+
+                            
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="lite_exch about-index">
+                        <h1 class="valuta-header">
+                            Lite Exchange
+                            <br>
+                            обменяйте валюту по выгодному курсу
+                        </h1>
+                        <ul class="list-group list-disc">
+                            <li>
+                                Покупаем и продаем доллары США, ЕВРО
+                                и другую валюту по выгордным курсам.
+                            </li>
+                            <li>
+                                Выдаем наличную валюту в кассах
+                                и банкоматах во всех крупных городах России.
+                            </li>
+                            <li>Фиксируем для Вас курс обмена на три рабочих дня.</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside_block">
+                    <div class="curs_CB">
+                        <h4 class="color-headers">Текущий курс ЦБ</h4>
+                        <div class="tb_cursCB">
+                            <table class="center hovertable" width="120">
+                                @*<tr class="header">
+                                    <td><p>Валюта</p></td>
+                                    <td><p>Курс</p></td>
+                                </tr>*@
+                                @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
+                                {
+                                    foreach (var child in node.ChildNodes)
+                                    {
+                                        <tr>
+                                            <td class="border-bottom">@child.SelectSingleNode("CharCode").InnerText</td>
+                                            <td class="border-bottom">@child.SelectSingleNode("Value").InnerText</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    @*<section>
+        <div class="screen-init">
+            <h1 class="valuta-header">Обмен валюты онлайн</h1>
             <div class="container">
+                <div class="steps-info"></div>
+                <table>
+                    <tr>
+                        <td>Ячейка 1</td>
+                        <td>Ячейка 2         </td>
+                        <td>Ячейка 3</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+                     
+        <div class="lite_exch about-index">
+            
                 <h2 class="valuta-header">
                     Lite Exchange
                     <br>
@@ -23,30 +233,33 @@
 
                 </ul>
 
-            </div>
+            
         </div>
-    </section>
-    <aside>
-        <div>
-            <h3>Текущий курс ЦБ</h3>
-            <table>
-                <tr class="header">
-                    <td><p>Валюта</p></td>
-                    <td><p>Курс ЦБ</p></td>
-                </tr>
-                @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
-                {
-                    foreach (var child in node.ChildNodes)
+    </section>*@
+    @*<aside>
+        <div class="curs_CB">
+            <h4 class="color-headers">Текущий курс ЦБ</h4>
+            <div class="tb_cursCB">
+                <table class="center" width="120">
+                    <tr class="header">
+                        <td><p>Валюта</p></td>
+                        <td><p>Курс</p></td>
+                    </tr>
+                    @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
                     {
-                        <tr>
-                            <td>@child.SelectSingleNode("CharCode").InnerText</td>
-                            <td>@child.SelectSingleNode("Value").InnerText</td>
-                        </tr>
+                        foreach (var child in node.ChildNodes)
+                        {
+                            <tr>
+                                <td>@child.SelectSingleNode("CharCode").InnerText</td>
+                                <td>@child.SelectSingleNode("Value").InnerText</td>
+                            </tr>
+                        }
                     }
-                }
-            </table>
+                </table>
+            </div>
+            
         </div>
-    </aside>
+    </aside>*@
 
 </body>
 </html>
