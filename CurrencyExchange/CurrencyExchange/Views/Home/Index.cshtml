@@ -3,6 +3,7 @@
 }
 
 
+
 <html>
 <body>
     <div class="main">
@@ -11,20 +12,22 @@
                 <div class="main_block">
                     <div class="screen-init">
                         <h1 class="valuta-header">Обмен валюты онлайн</h1>
-                        
-                            <div class="steps-info">
-                                <table class="center desc_steps">
-                                    <tr>
-                                        <td class="desc_steps">Выберите валюту и сумму для <br />обмена</td>
-                                        <td class="desc_steps">Выберите способ заключения 
-                                        <br />договора: прийти в отделение 
-                                        <br />Банка или вызвать курьера</td>
-                                        <td class="desc_steps">Ознакомьтесь с условиями <br />публичной оферты</td>
-                                        <td class="desc_steps">Введите Ваши платёжные данные</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        
+
+                        <div class="steps-info">
+                            <table class="center desc_steps">
+                                <tr>
+                                    <td class="desc_steps">Выберите валюту и сумму для <br />обмена</td>
+                                    <td class="desc_steps">
+                                        Выберите способ заключения
+                                        <br />договора: прийти в отделение
+                                        <br />Банка или вызвать курьера
+                                    </td>
+                                    <td class="desc_steps">Ознакомьтесь с условиями <br />публичной оферты</td>
+                                    <td class="desc_steps">Введите Ваши платёжные данные</td>
+                                </tr>
+                            </table>
+                        </div>
+
                     </div>
                     <div class="row center">
                         <div class="valuta-col-450">
@@ -38,10 +41,12 @@
                                                     <input type="radio"
                                                            name="course"
                                                            data-currency="usd"
-                                                           data-operation="buy">
+                                                           data-operation="buy"
+                                                           data-course="@ViewBag.usdBuy"
+                                                           checked="checked">
                                                     <span class="valuta-course__text">
                                                         <span>
-                                                            62,27
+                                                            @ViewBag.usdBuy
                                                         </span>
                                                         <sup>$</sup>
                                                     </span>
@@ -52,10 +57,11 @@
                                                     <input type="radio"
                                                            name="course"
                                                            data-currency="eur"
-                                                           data-operation="buy">
+                                                           data-operation="buy"
+                                                           data-course="@ViewBag.eurBuy">
                                                     <span class="valuta-course__text">
                                                         <span>
-                                                            62,27
+                                                            @ViewBag.eurBuy
                                                         </span>
                                                         <sup>€</sup>
 
@@ -76,15 +82,14 @@
                                                     <input type="radio"
                                                            name="course"
                                                            data-currency="usd"
-                                                           data-operation="sell">
+                                                           data-operation="sell"
+                                                           data-course="@ViewBag.usdSell">
                                                     <span class="valuta-course__text">
                                                         <span>
-                                                            62,27
+                                                            @ViewBag.usdSell
                                                         </span>
                                                         <sup>$</sup>
-
                                                     </span>
-
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -92,13 +97,13 @@
                                                     <input type="radio"
                                                            name="course"
                                                            data-currency="eur"
-                                                           data-operation="sell">
+                                                           data-operation="sell"
+                                                           data-course="@ViewBag.eurSell">
                                                     <span class="valuta-course__text">
                                                         <span>
-                                                            62,27
+                                                            @ViewBag.eurSell
                                                         </span>
                                                         <sup>€</sup>
-
                                                     </span>
                                                 </label>
                                             </div>
@@ -106,7 +111,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="valuta-col-280">
                             <div class="valuta-input">
@@ -116,36 +120,73 @@
                                     </label>
                                 </div>
                                 <div class="valuta-input__right">
-                                    <input type="text">
+                                    <input id="myInput" class="valuta-input__form-control" type="text">
                                 </div>
                             </div>
                             <div class="order-params">
                                 <div class="order-params__item">
                                     <div class="order-params__left">
-                                        <div class="order-params__normal-text">Я
-                                            <span>(продаю)</span>
-                                            <span>$</span>
+                                        <div class="order-params__normal-text">
+                                            Я
+                                            <span class="js-operation"></span>
+                                            <span class="js-currency"></span>
                                         </div>
                                     </div>
                                     <div class="order-params__right">
-                                        <div class="order-params__big-text">
-                                            4000
-                                        </div>
+                                        <div class="order-params__big-text js-amount"></div>
                                     </div>
                                 </div>
-
-                                
+                            </div>
+                            <div class="order-params">
+                                <div class="order-params__item">
+                                    <div class="order-params__left">
+                                        <div class="order-params__normal-text">
+                                            По курсу &#8381
+                                        </div>
+                                    </div>
+                                    <div class="order-params__right">
+                                        <div class="order-params__big-text js-selected_cours"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-params">
+                                <div class="order-params__item">
+                                    <div class="order-params__left">
+                                        <div class="order-params__normal-text">
+                                            Дата расчетов
+                                        </div>
+                                    </div>
+                                    <div class="order-params__right">
+                                        <div class="order-params__big-text js-сurrDate"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-params">
+                                <div class="order-params__item">
+                                    <div class="order-params__left">
+                                        <div class="order-params__normal-text">
+                                            Сумма сделки, &#8381
+                                        </div>
+                                    </div>
+                                    <div class="order-params__right">
+                                        <div class="order-params__big-text js-totalSumm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="blocj-btn">
+                                    <a href="/Home/Step2">
+                                        Кнопка
+                                    </a>
+                                    @*<button class="js-button"></button>*@
+                                </div>
                             </div>
 
-
-
-
-                            
-
                         </div>
-
                     </div>
-
+                    
 
 
                     <div class="lite_exch about-index">
@@ -173,10 +214,7 @@
                         <h4 class="color-headers">Текущий курс ЦБ</h4>
                         <div class="tb_cursCB">
                             <table class="center hovertable" width="120">
-                                @*<tr class="header">
-                                    <td><p>Валюта</p></td>
-                                    <td><p>Курс</p></td>
-                                </tr>*@
+
                                 @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
                                 {
                                     foreach (var child in node.ChildNodes)
@@ -187,10 +225,11 @@
                                         </tr>
                                     }
                                 }
+
                             </table>
                         </div>
-
                     </div>
+                    
                 </div>
             </div>
 
@@ -199,98 +238,67 @@
 
     </div>
 
-
+    @*$('.js-amount').html('Значение суммы');*@
 
     @*<section>
-        <div class="screen-init">
-            <h1 class="valuta-header">Обмен валюты онлайн</h1>
-            <div class="container">
-                <div class="steps-info"></div>
-                <table>
-                    <tr>
-                        <td>Ячейка 1</td>
-                        <td>Ячейка 2         </td>
-                        <td>Ячейка 3</td>
-                    </tr>
-                </table>
+            <div class="screen-init">
+                <h1 class="valuta-header">Обмен валюты онлайн</h1>
+                <div class="container">
+                    <div class="steps-info"></div>
+                    <table>
+                        <tr>
+                            <td>Ячейка 1</td>
+                            <td>Ячейка 2         </td>
+                            <td>Ячейка 3</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="lite_exch about-index">
+
+                    <h2 class="valuta-header">
+                        Lite Exchange
+                        <br>
+                        обменяйте валюту по выгодному курсу
+                    </h2>
+                    <ul class="list-group list-disc">
+                        <li>Покупаем и продаем доллары США, ЕВРО
+                        и другую валюту по выгордным курсам.</li>
+                        <li>Выдаем наличную валюту в кассах
+                        и банкоматах во всех крупных городах России.</li>
+                        <li>Фиксируем для Вас курс обмена на три рабочих дня.</li>
+
+                    </ul>
+
 
             </div>
-        </div>
-                     
-        <div class="lite_exch about-index">
-            
-                <h2 class="valuta-header">
-                    Lite Exchange
-                    <br>
-                    обменяйте валюту по выгодному курсу
-                </h2>
-                <ul class="list-group list-disc">
-                    <li>Покупаем и продаем доллары США, ЕВРО
-                    и другую валюту по выгордным курсам.</li>
-                    <li>Выдаем наличную валюту в кассах
-                    и банкоматах во всех крупных городах России.</li>
-                    <li>Фиксируем для Вас курс обмена на три рабочих дня.</li>
-
-                </ul>
-
-            
-        </div>
-    </section>*@
+        </section>*@
     @*<aside>
-        <div class="curs_CB">
-            <h4 class="color-headers">Текущий курс ЦБ</h4>
-            <div class="tb_cursCB">
-                <table class="center" width="120">
-                    <tr class="header">
-                        <td><p>Валюта</p></td>
-                        <td><p>Курс</p></td>
-                    </tr>
-                    @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
-                    {
-                        foreach (var child in node.ChildNodes)
+            <div class="curs_CB">
+                <h4 class="color-headers">Текущий курс ЦБ</h4>
+                <div class="tb_cursCB">
+                    <table class="center" width="120">
+                        <tr class="header">
+                            <td><p>Валюта</p></td>
+                            <td><p>Курс</p></td>
+                        </tr>
+                        @foreach (var node in ViewBag.CursCB.SelectNodes("ValCurs"))
                         {
-                            <tr>
-                                <td>@child.SelectSingleNode("CharCode").InnerText</td>
-                                <td>@child.SelectSingleNode("Value").InnerText</td>
-                            </tr>
+                            foreach (var child in node.ChildNodes)
+                            {
+                                <tr>
+                                    <td>@child.SelectSingleNode("CharCode").InnerText</td>
+                                    <td>@child.SelectSingleNode("Value").InnerText</td>
+                                </tr>
+                            }
                         }
-                    }
-                </table>
+                    </table>
+                </div>
+
             </div>
-            
-        </div>
-    </aside>*@
+        </aside>*@
 
 </body>
 </html>
-
-
-
-
-@*<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@

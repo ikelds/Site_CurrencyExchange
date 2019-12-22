@@ -13,6 +13,11 @@ namespace CurrencyExchange.Controllers
         {
 
             ViewBag.CursCB = LoadCursCB.LoadCurs();
+            ViewBag.usdSell = LoadCursCB.usdSell;
+            ViewBag.eurSell = LoadCursCB.eurSell;
+            ViewBag.usdBuy = LoadCursCB.usdBuy;
+            ViewBag.eurBuy = LoadCursCB.eurBuy;
+            
             return View();
         }
 
@@ -27,6 +32,18 @@ namespace CurrencyExchange.Controllers
         {
             ViewBag.Message = "Свяжитесь с нами по контактам указанным ниже.";
 
+            return View();
+        }
+
+        public ActionResult Step2()
+        {
+            ViewBag.Message = "Шаг 2";
+            
+            return View();
+        }
+
+        public ActionResult Step3()
+        {
             return View();
         }
     }

@@ -18,7 +18,9 @@ namespace CurrencyExchange
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            LoadCursCB loadCursCB = new LoadCursCB();
+            LoadCursCB.LoadCurs();
+
+            //LoadCursCB loadCursCB = new LoadCursCB();
             //loadCursCB.LoadCurs();
         }
     }
