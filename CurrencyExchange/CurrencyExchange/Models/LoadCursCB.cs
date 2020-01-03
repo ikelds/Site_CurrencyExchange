@@ -22,7 +22,6 @@ namespace CurrencyExchange.Models
         public static decimal usdBuy;
         public static decimal eurBuy;
 
-
         static NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
         static CultureInfo provider = new CultureInfo("RU-RU");
 
@@ -30,9 +29,13 @@ namespace CurrencyExchange.Models
         {
             XmlDocument xDoc = new XmlDocument();
 
-            //xDoc.Load("http://www.cbr.ru/scripts/XML_daily.asp");
-            xDoc.Load("C:\\Temp\\XML_daily.asp.odm");
+            // Загрузим текущие курсы с сайта ЦБ
+            xDoc.Load("http://www.cbr.ru/scripts/XML_daily.asp");
+            
+            // Загрузка xml для тестов с локального диска.
+            //xDoc.Load("C:\\Temp\\XML_daily.asp.odm");
 
+            // Получим текущее значение курса доллара и евро курса ЦБ и сохраним в переменные.
             foreach (XmlElement node in xDoc.SelectNodes("ValCurs"))
             {
                 foreach (XmlElement child in node.ChildNodes)

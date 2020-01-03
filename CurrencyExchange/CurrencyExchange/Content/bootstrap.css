@@ -4666,7 +4666,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-    background-color: #ffc824;
+    background-color:  cornflowerblue;
     /*border-color: #080808;*/
 
     
@@ -4684,6 +4684,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-nav > li > a {
   /*color: #9d9d9d;*/
+  color: black;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {

@@ -10,45 +10,36 @@
 footer{
     clear:both;
 }
-
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 40px;
 }
-
-input,
-select,
-textarea {
-    max-width: 100px;
-}
-
 .header {
     font-weight: bold;
     padding: 20px;
 }
 td.border-bottom{
-    /*height: 35px;*/
     text-align: center;
     vertical-align: bottom;
     border-bottom: 1px solid #ddd;
-    /*padding-top: 6px;*/
 }
-
-tr:hover {
-    background-color: #f5f5f5;
-
+td.border-bottom_step2 {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
 }
 .hovertable tr:hover td {
     background-color: #f5f5f5;
 }
-/*table{
-    width: 130px;
-}*/
+.hovertable tr.nohover:hover {
+    background: none;
+}
 .lite_exch.about-index {
     padding-bottom: 0;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 65px;
+    margin-bottom: 65px;
 }
 .container{
     margin-right: auto;
@@ -75,7 +66,9 @@ ul {
 ul.list-disk li {
     list-style: disc;
     margin-left: 20px;
-    padding-left: 15px;
+}
+.list-disc {
+    padding-left: 200px;
 }
 .valuta-header {
     color: #002863;
@@ -90,13 +83,6 @@ ul.list-disk li {
 }
 ul.list-group{
     text-align: left;
-}
-/*table.tb_cursCB{
-    width:130px;
-}*/
-.tb_cursCB {
-    /*width: 20px;*/
-    /*font-size: 15px;*/
 }
 .curs_CB{
     width: 200px;
@@ -127,22 +113,15 @@ table.center{
 td.desc_steps {
     text-align: left;
     font-size: 13px;
-    /*width: 50px;*/
     height: 50px;
     vertical-align: top;
-    /*padding: 10px;*/
 }
 .desc_steps {
     width:950px;
-    /*border-spacing: 200px;*/
-}
-table{
-    
 }
 .valuta-col-450, .valuta-col-280 {
     float: left;
     margin-right: 50px;
-    /*text-align: center;*/
 }
 .valuta-course__title {
     color: #002863;
@@ -173,14 +152,24 @@ table{
 }
 .valuta-col-280 {
     width: 240px;
+    margin-bottom: 80px;
+}
+.step2-col {
+    width:auto;
+    text-align: center;
 }
 .valuta-input__right {
     width: 50%;
 }
+.order-params__left_step2 {
+    vertical-align: middle;
+    padding-right: 5px;
+    border-bottom: 1px solid #cbcdcd;
+    text-align: center;
+}
 .order-params__left {
     display: table-cell;
     vertical-align: middle;
-    /*padding: 6px 0;*/
     padding-right: 5px;
     border-bottom: 1px solid #cbcdcd;
     text-align: left;
@@ -197,4 +186,30 @@ table{
 .order-params__item {
     display: table;
     width: 100%;
+}
+.btn {
+    font-size: 20px;
+    border-radius: 29px;
+    background-color: darkseagreen;
+    color: black;
+    padding: 15px;
+    text-transform: uppercase;
+}
+.highlighting {
+    color: chocolate;
+    font-weight: 600;
+}
+.step2_table{
+    width: 230px;
+}
+.input_area {
+    margin-bottom: 30px;
+}
+.step3_confirmation {
+    margin-top: 10px;
+    margin-bottom: 200px;
+    font-size: medium;
+}
+.valuta-input__form-control {
+    max-width: 100px;
 }

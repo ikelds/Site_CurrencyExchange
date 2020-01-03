@@ -3,24 +3,49 @@
     ViewBag.Title = "Step2";
 }
 
-    <div class="main">
-        <div class="row">
-            <input placeholder="Фамилия" />
-        </div>
-        <div class="row">
-            <input placeholder="Имя" />
-        </div>
-        <div class="row">
-            <input placeholder="Отчество" />
-        </div>
-        <div class="row">
-            <input placeholder="Телефон" />
-        </div>
-        <div class="row">
-            <input placeholder="E-mail" />
-        </div>
-        <div class="row">
-            <a href="/Home/Step3">Далее</a>
+    <div class="container">
+        <div class="row center">
+            <h1 class="valuta-header">Подтверждение заявки на обмен валюты</h1>
+            <br />
+            <br />
+            <table class="center step2_table">
+                <tr>
+                    <td class="border-bottom_step2" align="left">Я @ViewBag.operation @ViewBag.currency</td>
+                    <td class="border-bottom_step2" align="right">@ViewBag.amount</td>
+                </tr>
+                <tr>
+                    <td class="border-bottom_step2" align="left">По курсу &#8381</td>
+                    <td class="border-bottom_step2" align="right">@ViewBag.course</td>
+                </tr>
+                <tr>
+                    <td class="border-bottom_step2" align="left">Дата расчетов</td>
+                    <td class="border-bottom_step2" align="right">@ViewBag.date</td>
+                </tr>
+                <tr>
+                    <td class="border-bottom_step2" align="left">Сумма сделки &#8381</td>
+                    <td class="border-bottom_step2" align="right">@ViewBag.sum</td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <div><b>Введите ваши контактные данные:</b></div>
+            <br />
+            <div class="input_area">
+                <form method="post" action="">
+                    <input type="text" name="Surname" placeholder="Фамилия" required/>
+                    <input type="text" name="Name" placeholder="Имя"  required/>
+                    <input type="text" name="Patronymic" placeholder="Отчество" />
+                    <input type="tel" name="Phone" placeholder="Тел. (918 123 1234)"
+                           pattern="[0-9]{3} [0-9]{3} [0-9]{4}"/>
+                    <input type="email" name="Email" placeholder="Эл. почта" required/><br />
+                    <br />
+                    <br />
+                    <br />
+                    <input class="btn" type="submit" value="Отправить" />
+                </form>
+            </div>
         </div>
     </div>
+  
+
 

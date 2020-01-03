@@ -148,3 +148,7 @@ T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\obj\Debug\Curr
 T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\obj\Debug\CurrencyExchange.csproj.CopyComplete
 T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\obj\Debug\CurrencyExchange.dll
 T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\obj\Debug\CurrencyExchange.pdb
+T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\bin\EntityFramework.dll
+T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\bin\EntityFramework.SqlServer.dll
+T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\bin\EntityFramework.xml
+T:\GitHub\Site_CurrencyExchange\CurrencyExchange\CurrencyExchange\bin\EntityFramework.SqlServer.xml

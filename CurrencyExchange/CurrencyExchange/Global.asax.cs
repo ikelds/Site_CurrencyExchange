@@ -17,11 +17,6 @@ namespace CurrencyExchange
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            LoadCursCB.LoadCurs();
-
-            //LoadCursCB loadCursCB = new LoadCursCB();
-            //loadCursCB.LoadCurs();
         }
     }
 }
